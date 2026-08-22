@@ -1,7 +1,7 @@
 :: Main Programme
 @echo off
 title Software Check for GBS IT Labs
-echo ___________________________________________
+
 
 echo Software installation check for GBS IT Labs
 
@@ -32,9 +32,8 @@ call :check_Software "Visual Studio Code" "C:\Program Files\Microsoft VS Code\Co
 call :check_Software "XAMPP" "C:\xampp\xampp-control.exe"
 call :check_Software "Zotero" "C:\Program Files (x86)\Zotero\zotero.exe"
 echo.
-echo ___________________________________________
+echo _
 echo Software checklist completed.
-echo ___________________________________________
 pause
 exit /b
 
@@ -46,7 +45,7 @@ reg query "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" /s /f %1 >n
 :: /s searches all subkeys, /f specifies the search string (software name), and >nul 2>&1 redirects output to null to hide all errors and output so the user only sees the result of the check.
 
 if %errorlevel% equ 0 (
-    echo %~1 [Installed]
+    echo %~1 [INSTALLED]
 ) else (
     echo %~1 [MISSING*]
 )
