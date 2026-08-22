@@ -10,7 +10,7 @@ echo Checking software installation for GBS IT Labs...
 echo.
 
 call :check_Software "Revit 2026" "C:\Program Files\Autodesk\Revit 2026\Revit.exe"
-call :check_Software "Ardunio IDE" "C:\Program Files (x86)\Arduino\arduino.exe"
+call :check_Software "Arduino IDE" "C:\Program Files (x86)\Arduino\arduino.exe"
 call :check_Software "Cisco Packet Tracer" "C:\Program Files (x86)\Cisco Packet Tracer 8.2\bin\PacketTracer.exe"
 call :check_Software "GitHub Desktop" "C:\Users\%USERNAME%\AppData\Local\GitHubDesktop\GitHubDesktop.exe"
 call :check_Software "IntelliJ IDEA" "C:\Program Files\JetBrains\IntelliJ IDEA 2023.2.1\bin\idea64.exe"
