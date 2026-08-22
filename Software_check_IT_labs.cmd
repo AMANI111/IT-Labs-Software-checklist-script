@@ -1,11 +1,12 @@
 :: Main Programme
 @echo off
 title Software Check for GBS IT Labs
+:Start
+cls
+
+echo Checking software installation for GBS IT Labs...
 
 
-echo Software installation check for GBS IT Labs
-
-echo ___________________________________________
 echo.
 
 call :check_Software "Revit 2026" "C:\Program Files\Autodesk\Revit 2026\Revit.exe"
@@ -34,9 +35,14 @@ call :check_Software "Zotero" "C:\Program Files (x86)\Zotero\zotero.exe"
 echo.
 echo _
 echo Software checklist completed.
-pause
-exit /b
 
+echo.
+:: Prompt user to run again
+set /p choice="Run software checklist again? (Y/N): "
+if /i "%choice%"=="Y" goto Start
+pause
+if /i "%choice%"=="N" exit /b
+    echo Exiting the software checklist...
 
 REM Function Definitions inside mainscript to check if software is installed or not. It uses the Windows registry to check for the presence of the software by searching for its name in the Uninstall key.
 :check_Software
@@ -51,5 +57,3 @@ if %errorlevel% equ 0 (
 )
 
 :: 0 indicates that the software was found, while a non-zero value indicates that it was not found. The script uses this to determine whether to print that the software is installed or not. the ~ removes quotation marks from the software name, which is necessary for the echo command to work correctly.
-
-exit /b
